@@ -1,0 +1,12 @@
+import numpy as np
+n= int(input())
+a = np.array([input().split() for _ in range(n)],dtype=np.int)
+b = np.array([input().split() for _ in range(n)],dtype=np.int)
+
+res = []
+for r in range(n):
+    row = [np.dot(a[r,:],b[:,i]) for i in range(n)]
+    res.append(row)
+
+res = np.array(res)
+print(res)
